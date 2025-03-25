@@ -45,29 +45,25 @@
       <div class="right-image">
         <img src="./images/area_of_triangle.png" alt="White sign that shows the formula to calculate the area of a triangle, image" width="250" />
       </div>
-      <br />
-      <div class="page-content">Enter Triangle's base and height in cm.</div>
       <div class="page-content-php">
-        <form action="answer.php" method="GET">
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="base-of-triangle">
-            <label class="mdl-textfield__label" for="base-of-triangle">Enter base of triangle here</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="height-of-triangle">
-            <label class="mdl-textfield__label" for="height-of-triangle">Enter height of triangle here</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <!-- Accent-colored raised button with ripple -->
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            type="submit">
-            Calculate
-          </button>
-        </form>
-      </div>
+        <div id="user-info">
+          <?php
+          $baseOfTriangle = $_GET["base-of-triangle"];
+          $heightOfTriangle = $_GET["height-of-triangle"];
+
+          // process
+          $area = ($baseOfTriangle * $heightOfTriangle) / 2;
+
+          // output
+          echo "If the triangle has a base of = " . $baseOfTriangle . " cm and the height of = " . $heightOfTriangle . " cm:";
+          echo "<br />";
+          echo "Than the area of the triangle is " . $area . " cm².";
+          ?>
+        </div>
+        <br />
+        <div class="page-content-answer">
+          <a href="./index.php">Return ...</a>
+        </div>
     </main>
   </div>
 </body>
