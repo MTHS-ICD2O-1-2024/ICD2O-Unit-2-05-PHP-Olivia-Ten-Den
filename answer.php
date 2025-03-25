@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- ICS2O-Unit2-04-HTML-PHP -->
+<!-- ICS2O-Unit2-05-HTML-PHP -->
 <html lang="en-ca">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="The Area of Triangle program, PHP" />
+  <meta name="description" content="The salary program, PHP" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Olivia TD" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +30,7 @@
     sizes="16x16"
     href="./favicon-16x16.png" />
   <link rel="manifest" href="./site.webmanifest" />
-  <title>The Area of Triangle program, PHP</title>
+  <title>The salary program, PHP</title>
 </head>
 
 <body>
@@ -38,32 +38,34 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">The Area of Triangle program, PHP</span>
+        <span class="mdl-layout-title">The salary program, PHP</span>
       </div>
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <img src="./images/area_of_triangle.png" alt="White sign that shows the formula to calculate the area of a triangle, image" width="250" />
+        <img src="./images/income_tax.jpg" alt="Image: The words income tax written on a notebook." width="250" />
       </div>
       <div class="page-content-php">
         <div id="user-info">
           <?php
-          $baseOfTriangle = $_GET["base-of-triangle"];
-          $heightOfTriangle = $_GET["height-of-triangle"];
+          // Ontario income tax
+          $ONTARIO_INCOME_TAX = 0.18;
+
+          $numberOfHoursWorked = $_GET["number-of-hours-worked"];
+          $hourlyWage = $_GET["hourly-wage"];
 
           // process
-          $area = ($baseOfTriangle * $heightOfTriangle) / 2;
+          $incomeTaxToPay = ($numberOfHoursWorked * $hourlyWage) * $ONTARIO_INCOME_TAX;
+          $takeHomeSalary = ($numberOfHoursWorked * $hourlyWage) - $incomeTaxToPay;
 
           // output
-          echo "If the triangle has a base of = " . $baseOfTriangle . " cm and the height of = " . $heightOfTriangle . " cm:";
-          echo "<br />";
-          echo "Than the area of the triangle is " . $area . " cm².";
-          ?>
-        </div>
-        <br />
-        <div class="page-content-answer">
-          <a href="./index.php">Return ...</a>
-        </div>
+          echo(round(takeHomeSalary, 2));
+          echo(round(incomeTaxToPay, 2));
+      </div>
+      <br />
+      <div class="page-content-answer">
+        <a href="./index.php">Return ...</a>
+      </div>
     </main>
   </div>
 </body>
