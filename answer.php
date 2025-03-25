@@ -59,13 +59,14 @@
           $takeHomeSalary = ($numberOfHoursWorked * $hourlyWage) - $incomeTaxToPay;
 
           // output
-          echo(round(takeHomeSalary, 2));
-          echo(round(incomeTaxToPay, 2));
-      </div>
-      <br />
-      <div class="page-content-answer">
-        <a href="./index.php">Return ...</a>
-      </div>
+          echo "Your take home salary is $ " . (round(takeHomeSalary, 2));
+          echo "Your income tax to pay is $ " . (round(incomeTaxToPay, 2));
+          ?>
+        </div>
+        <br />
+        <div class="page-content-answer">
+          <a href="./index.php">Return ...</a>
+        </div>
     </main>
   </div>
 </body>
