@@ -58,8 +58,18 @@
           $incomeTaxToPay = ($numberOfHoursWorked * $hourlyWage) * $ONTARIO_INCOME_TAX;
           $takeHomeSalary = ($numberOfHoursWorked * $hourlyWage) - $incomeTaxToPay;
 
+          // format
+          // got answer from Gemini
+          // "php format variable to 2 decimal places!"
+
+          // got from: https://stackoverflow.com/questions/4483540/show-a-number-to-two-decimal-places
+
+          $formatedIncomeTaxToPay= number_format($incomeTaxToPay, 2); // Returns "12.35" (rounded)
+
+
           // output
-          echo "Your take home salary is $" . (round($takeHomeSalary, 2));
+          echo "Your take home salary is $" . $formatedIncomeTaxToPay;
+          echo "<br>";
           echo "Your income tax to pay is $" . (round($incomeTaxToPay, 2));
           ?>
         </div>
