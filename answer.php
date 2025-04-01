@@ -64,7 +64,7 @@
 
           // got from: https://stackoverflow.com/questions/4483540/show-a-number-to-two-decimal-places
 
-          $formatedIncomeTaxToPay= number_format($incomeTaxToPay, 2); // Returns "12.35" (rounded)
+          $formatedIncomeTaxToPay = number_format($incomeTaxToPay, 2); // Returns "12.35" (rounded)
           $formatedtakeHomeSalary = number_format($incomeTaxToPay, 2); // Returns "12.35" (rounded)
 
           // output
